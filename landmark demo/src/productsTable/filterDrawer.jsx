@@ -11,7 +11,7 @@ export default function FilterDrawer({filterDrawerToggle, setFilterDrawerToggle}
                     FILTERS
                     <img src={closeIcon} className='hover:cursor-pointer' alt="" onClick={()=>{setFilterDrawerToggle((prev)=>{return !prev})}}></img>
                 </div>
-                <div className='flex flex-col'>
+                <div className='flex flex-col mt-3'>
                     <div class="relative w-full my-2">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -20,35 +20,39 @@ export default function FilterDrawer({filterDrawerToggle, setFilterDrawerToggle}
                         </div>
                         <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items"/>
                     </div>
-                    <div className='max-h-80'>
+                    <div className='max-h-80 overflow-y-auto bg-gray-50 rounded-lg border-gray-300 border-2'>
                         <TitlesDropdown />
                     </div>
                 </div>
-                <div className='flex flex-col mt-3'>
+                <div className='flex flex-col mt-5'>
                     <span className='text-sm text-gray-900'>Last Update On</span>
                     <div className='w-full flex mt-1'>
-                        <div className='w-1/2 flex flex-col'>
+                        <div className='w-1/2 flex flex-col pr-1'>
                             <span className='text-sm text-gray-900'>From</span>
-                            <div class="relative max-w-sm mt-1">
+                            <input type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-2.5 pe-1.5 py-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" />
+                            {/* <div class="relative max-w-sm mt-1">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                                 </svg>
-                            </div>
+                                </div>
                             <input datepicker datepicker-format="mm/dd/yyyy" type="text" onFocus={(e)=>{e.target.type='date'}} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" />
-                            </div>
+                            </div> */}
                         </div>
-                        <div className='w-1/2'></div>
+                        <div className='w-1/2 flex flex-col pl-1'>
+                            <span className='text-sm text-gray-900'>To</span>
+                            <input type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-2.5 pe-1.5 py-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" />
+                        </div>
                     </div>
                 </div>
-                <div className='flex flex-col mt-3'>
+                <div className='flex flex-col mt-5'>
                     <span className='text-sm text-gray-900'>Vendor Status</span>
                     <select className="w-full mt-1 py-2 px-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Active</option>
                         <option>Expired</option>
                     </select>
                 </div>
-                <div className='flex flex-col mt-3'>
+                <div className='flex flex-col mt-5'>
                     <span className='text-sm text-gray-900'>Vendor Rate Expired</span>
                     <select className="w-full mt-1 py-2 px-1 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option>Active</option>
